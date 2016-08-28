@@ -37,6 +37,7 @@ export default class List extends Component {
                 console.log(card);
                 return (
                     <Card
+                        key={card.id}
                         className="card"
                         card={card}
                     />
