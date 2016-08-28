@@ -1,0 +1,92 @@
+body{
+    background: #f5f0ea;
+    font-family: 'Source Code Pro', monospace;
+    color: rgb(61, 71, 103);
+    text-align: center;
+}
+
+h1{
+    font-family: Volkhov, serif;
+    letter-spacing: -1px;
+    font-size: 1.7em;
+    text-align: center;
+    display: block;
+    margin-top: 30px !important;
+}
+.base-button{
+  padding: 10px 50px;
+  outline:none;
+  border: 0px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px auto;
+  display: block;
+}
+.base-button.blue{
+  background: #068cff !important;
+  color: #fff;
+  /*box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15);*/
+}
+.base-button.blue:hover {
+  background: #0479dd !important;
+  color: #fff;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.base-button.choose-board {
+  background: #f0e9df;
+  min-width: 450px;
+  font-size: 15px;
+  font-weight: 500;
+  /*box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15);*/
+}
+.base-button.choose-board:hover{
+  background: #ece3d7;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+.board-list {
+  margin-bottom: 50px;
+}
+
+div.login-button-wrapper {
+  margin: 0px auto;
+  margin-top: 200px;
+  max-width: 430px;
+}
+div.login-button-wrapper p{
+  margin: 20px 0px;
+}
+
+
+div.list{
+  max-width: 800px;
+  margin: 20px auto;
+}
+div.list h4 {
+  text-align: left;
+  opacity: 0.8;
+  height: 40px;
+  padding:10px 10px;
+}
+div.list h4.closed {
+  opacity: 0.4;
+}
+div.list h4 span{
+  float: right;
+}
+div.list h4:hover {
+  background: #f0e9df;
+  cursor: pointer;
+  border-radius: 10px;
+}
+ul.card-list{
+  list-style-type: none;
+  padding-left: 0px;
+}
+li.card {
+  background: #f0e9df;
+  margin: 10px 0px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
