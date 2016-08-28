@@ -74,40 +74,41 @@ div.login-button-wrapper p {
 div.list {
   max-width: 800px;
   margin: 20px auto;
+  display: block;
 }
-/* line 62, index.scss */
+/* line 63, index.scss */
 div.list h4 {
   text-align: left;
   opacity: 0.8;
   height: 20px;
   margin: 5px 0px !important;
   padding: 9px 9px;
+  width: 100% !important;
 }
-/* line 68, index.scss */
+/* line 71, index.scss */
 div.list h4:hover {
   background: #f0e9df;
   cursor: pointer;
   border-radius: 5px;
 }
-/* line 73, index.scss */
+/* line 76, index.scss */
 div.list h4.closed {
   opacity: 0.4;
 }
-/* line 76, index.scss */
+/* line 79, index.scss */
 div.list h4 span {
   float: right;
 }
-/* line 80, index.scss */
+/* line 83, index.scss */
 div.list ul.card-list {
   list-style-type: none;
   padding-left: 0px;
 }
-/* line 84, index.scss */
+/* line 87, index.scss */
 div.list ul.card-list li.card {
   background: #f0e9e0;
   text-align: center;
   margin: 10px 0px;
-  width: 100%;
   padding: 15px 20px;
   font-size: 14px;
   font-weight: 500;
@@ -115,12 +116,12 @@ div.list ul.card-list li.card {
   cursor: pointer;
   position: relative;
 }
-/* line 96, index.scss */
+/* line 98, index.scss */
 div.list ul.card-list li.card > img {
   position: relative;
   top: 3px;
 }
-/* line 100, index.scss */
+/* line 102, index.scss */
 div.list ul.card-list li.card.inactive {
   opacity: 0.5;
   text-decoration: line-through;
@@ -147,7 +148,7 @@ div.list ul.card-list li.card.inactive {
     box-shadow: none;
   }
 }
-/* line 131, index.scss */
+/* line 133, index.scss */
 div.list ul.card-list li.card.inactive.animate {
   background: #30ff90;
   background: -moz-linear-gradient(left, #30ff90 0%, #ed2ded 25%, #c99826 50%, #30ffe6 75%, #30ff90 100%);
@@ -160,11 +161,18 @@ div.list ul.card-list li.card.inactive.animate {
   animation: rotate 350ms linear;
   -webkit-animation: rotate 350ms linear;
 }
-/* line 146, index.scss */
-div.list ul.card-list li.card.inactive .done-button .tick-icon {
-  opacity: 1;
+/* line 148, index.scss */
+div.list ul.card-list li.card.inactive .done-button:after {
+  content: '';
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+  background-color: #168cff;
+  position: absolute;
+  top: 3px;
+  left: 3px;
 }
-/* line 151, index.scss */
+/* line 160, index.scss */
 div.list ul.card-list li.card .done-button {
   width: 32px;
   height: 32px;
@@ -180,28 +188,21 @@ div.list ul.card-list li.card .done-button {
   -webkit-transition-duration: 0.2s;
   outline: none;
 }
-/* line 165, index.scss */
-div.list ul.card-list li.card .done-button .tick-icon {
-  opacity: 0;
-  color: #168cff !important;
-  position: relative;
-  left: -4px;
-}
-/* line 172, index.scss */
+/* line 175, index.scss */
 div.list ul.card-list li.card:hover .done-button {
   opacity: 0.4;
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   border-color: #168cff;
 }
-/* line 177, index.scss */
+/* line 180, index.scss */
 div.list ul.card-list li.card:hover .done-button:hover {
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   border-color: #168cff;
   opacity: 1;
 }
-/* line 185, index.scss */
+/* line 188, index.scss */
 div.list ul.card-list li.card:hover {
   background: #dae0e6;
 }

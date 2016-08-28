@@ -20,7 +20,7 @@ window.trelloClient = (function() {
     }
     function getBoards(opts) {
         Trello.get(
-          '/members/me/boards/',
+          '/members/me/boards/?filter=open',
           opts.success,
           function() {console.log("Failed to load boards"); }
         );
@@ -74,6 +74,13 @@ window.trelloClient = (function() {
     // Trello.post('/cards/', newCard, creationSuccess);
     // // Trello.put('/cards/[ID]', {name: 'New Test Card'});
 
+    function closeCard(opts, cardId, val) {
+        Trello.put(
+            '/cards/' + cardId + '/closed?value=' + val,
+            opts.success,
+            function() {console.log("Failed to close the card");}
+        )
+    }
 
     const trelloClient = {
       Login:Login,
@@ -82,6 +89,7 @@ window.trelloClient = (function() {
       getBoardLabels:getBoardLabels,
       getBoardLists:getBoardLists,
       getListCards:getListCards,
+      closeCard:closeCard,
     };
     return trelloClient;
 })();

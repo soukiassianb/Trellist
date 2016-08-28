@@ -34,7 +34,6 @@ export default class List extends Component {
         let cardList;
         if(this.state.cards.length > 0 && !this.state.closed) {
             cardList = this.state.cards.map((card) => {
-                console.log(card);
                 return (
                     <Card
                         key={card.id}

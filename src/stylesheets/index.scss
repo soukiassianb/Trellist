@@ -59,12 +59,15 @@ div.login-button-wrapper {
 div.list{
   max-width: 800px;
   margin: 20px auto;
+  display: block;
   h4 {
     text-align: left;
     opacity: 0.8;
     height: 20px;
     margin: 5px 0px !important;
     padding:9px 9px;
+    width: 100% !important;
+
     &:hover {
       background: #f0e9df;
       cursor: pointer;
@@ -85,7 +88,6 @@ div.list{
           background: darken(#f5f0ea, 3%);
           text-align: center;
           margin: 10px 0px;
-          width: 100%;
           padding: 15px 20px;
           font-size: 14px;
           font-weight: 500;
@@ -143,8 +145,15 @@ div.list{
 
               .done-button{
                   // background-color: rgb(22, 140, 255);
-                  .tick-icon{
-                      opacity: 1;
+                  &:after {
+                    content: '';
+                    height: 18px;
+                    width:  18px;
+                    border-radius: 20px;
+                    background-color: rgb(22, 140, 255);
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
                   }
               }
           }
@@ -162,12 +171,6 @@ div.list{
               transition-duration:0.2s;
               -webkit-transition-duration:0.2s;
               outline:none;
-              .tick-icon{
-                  opacity: 0;
-                  color:rgb(22, 140, 255) !important;
-                  position: relative;
-                  left:-4px;
-              }
           }
           &:hover .done-button{
               opacity: 0.4;

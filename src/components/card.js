@@ -26,7 +26,11 @@ export default class Card extends Component {
         }, 350);
     }
     onItemDoneClick() {
-        // this.props.itemDone(this.props.id);
+        trelloClient.closeCard({
+            success: (data) => {
+                return;
+            }
+        }, this.props.card.id, this.state.active);
         this.setState({
             active: !this.state.active
         });
