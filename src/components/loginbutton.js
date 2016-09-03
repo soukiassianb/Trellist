@@ -18,6 +18,7 @@ export default class LoginButton extends Component {
     render() {
         return (
             <div className="login-button-wrapper">
+                <h1>Trellist</h1>
                 <h3>A minimalist Trello client</h3>
                 <button
                     className="base-button blue"

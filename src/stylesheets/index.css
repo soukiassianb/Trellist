@@ -1,4 +1,4 @@
-/* line 1, index.scss */
+/* line 3, index.scss */
 body {
   background: #f5f0ea;
   font-family: 'Source Code Pro', monospace;
@@ -6,7 +6,46 @@ body {
   text-align: center;
 }
 
-/* line 8, index.scss */
+/* line 9, index.scss */
+.centered, div.login-button-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* line 19, index.scss */
+.noselect, div.board div.list h4 {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 29, index.scss */
+.top-border {
+  height: 3px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #068cff;
+  z-index: 100;
+}
+
+/* line 38, index.scss */
+img.logo {
+  height: 50px;
+  width: 50px;
+  margin: 30px;
+}
+
+/* line 43, index.scss */
 h1 {
   font-family: Volkhov, serif;
   letter-spacing: -1px;
@@ -16,7 +55,7 @@ h1 {
   margin-top: 30px !important;
 }
 
-/* line 16, index.scss */
+/* line 52, index.scss */
 .base-button {
   padding: 10px 50px;
   outline: none;
@@ -26,103 +65,137 @@ h1 {
   margin: 10px auto;
   display: block;
   color: #3d4767;
+  cursor: pointer;
 }
-/* line 26, index.scss */
+/* line 63, index.scss */
 .base-button.blue {
   background: #068cff !important;
   color: #fff;
   /*box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15);*/
 }
-/* line 30, index.scss */
+/* line 67, index.scss */
 .base-button.blue:hover {
-  background: #0479dd !important;
+  background: #0084f6 !important;
   color: #fff;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* line 37, index.scss */
+/* line 74, index.scss */
+.user-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 45px;
+  border: 0px solid #068cff !important;
+  float: right;
+}
+
+/* line 83, index.scss */
 .base-button.choose-board {
   background: #f0e9df;
   min-width: 450px;
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
   /*box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15);*/
 }
-/* line 43, index.scss */
+/* line 90, index.scss */
 .base-button.choose-board:hover {
   background: #ece3d7;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* line 48, index.scss */
+/* line 95, index.scss */
 .board-list {
   margin-bottom: 50px;
 }
 
-/* line 51, index.scss */
+/* line 98, index.scss */
 div.login-button-wrapper {
-  margin: 0px auto;
-  margin-top: 200px;
   max-width: 430px;
+  margin-top: -50px;
 }
-/* line 55, index.scss */
+/* line 102, index.scss */
 div.login-button-wrapper p {
   margin: 20px 0px;
 }
 
-/* line 59, index.scss */
-div.list {
-  max-width: 800px;
+/* line 107, index.scss */
+div.board {
+  max-width: 750px;
+  margin: 20px auto;
+  margin-bottom: 130px;
+}
+/* line 111, index.scss */
+div.board h3 {
+  text-align: left;
+  font-family: Volkhov, serif;
+  letter-spacing: 0px;
+  font-size: 1.3em;
+}
+/* line 117, index.scss */
+div.board div.list {
+  max-width: 750px;
   margin: 20px auto;
   display: block;
 }
-/* line 63, index.scss */
-div.list h4 {
+/* line 121, index.scss */
+div.board div.list h4 {
   text-align: left;
   opacity: 0.8;
   height: 20px;
-  margin: 5px 0px !important;
-  padding: 9px 9px;
-  width: 100% !important;
+  margin: 0px 0px !important;
+  padding: 5px 5px;
+  border-radius: 5px;
 }
-/* line 71, index.scss */
-div.list h4:hover {
+/* line 129, index.scss */
+div.board div.list h4:hover {
   background: #f0e9df;
   cursor: pointer;
   border-radius: 5px;
 }
-/* line 76, index.scss */
-div.list h4.closed {
+/* line 134, index.scss */
+div.board div.list h4.closed {
   opacity: 0.4;
 }
-/* line 79, index.scss */
-div.list h4 span {
+/* line 137, index.scss */
+div.board div.list h4 span {
   float: right;
+  opacity: 0.7;
+  font-size: 15px;
 }
-/* line 83, index.scss */
-div.list ul.card-list {
+/* line 143, index.scss */
+div.board div.list ul.card-list {
   list-style-type: none;
   padding-left: 0px;
 }
-/* line 87, index.scss */
-div.list ul.card-list li.card {
+/* line 147, index.scss */
+div.board div.list ul.card-list li.card {
   background: #f0e9e0;
   text-align: center;
   margin: 10px 0px;
-  padding: 15px 20px;
+  padding: 15px 30px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
   position: relative;
+  box-shadow: 0px 1px 0px #eee6dc;
 }
-/* line 98, index.scss */
-div.list ul.card-list li.card > img {
+/* line 160, index.scss */
+div.board div.list ul.card-list li.card a:not(.open-card-on-trello) {
+  color: inherit;
+  text-decoration: none;
+  color: #068cff;
+}
+/* line 164, index.scss */
+div.board div.list ul.card-list li.card a:not(.open-card-on-trello):hover {
+  border-bottom: 2px dotted;
+}
+/* line 168, index.scss */
+div.board div.list ul.card-list li.card > img {
   position: relative;
   top: 3px;
 }
-/* line 102, index.scss */
-div.list ul.card-list li.card.inactive {
+/* line 172, index.scss */
+div.board div.list ul.card-list li.card.inactive {
   opacity: 0.5;
   text-decoration: line-through;
 }
@@ -148,8 +221,8 @@ div.list ul.card-list li.card.inactive {
     box-shadow: none;
   }
 }
-/* line 133, index.scss */
-div.list ul.card-list li.card.inactive.animate {
+/* line 203, index.scss */
+div.board div.list ul.card-list li.card.inactive.animate {
   background: #30ff90;
   background: -moz-linear-gradient(left, #30ff90 0%, #ed2ded 25%, #c99826 50%, #30ffe6 75%, #30ff90 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #30ff90), color-stop(25%, #ed2ded), color-stop(50%, #c99826), color-stop(75%, #30ffe6), color-stop(100%, #30ff90));
@@ -161,48 +234,303 @@ div.list ul.card-list li.card.inactive.animate {
   animation: rotate 350ms linear;
   -webkit-animation: rotate 350ms linear;
 }
-/* line 148, index.scss */
-div.list ul.card-list li.card.inactive .done-button:after {
+/* line 218, index.scss */
+div.board div.list ul.card-list li.card.inactive .done-button:after {
   content: '';
   height: 18px;
   width: 18px;
   border-radius: 20px;
-  background-color: #168cff;
+  background-color: #068cff;
   position: absolute;
   top: 3px;
   left: 3px;
 }
-/* line 160, index.scss */
-div.list ul.card-list li.card .done-button {
+/* line 230, index.scss */
+div.board div.list ul.card-list li.card span.hashtag {
+  color: #068cff;
+  cursor: pointer;
+  margin-left: 6px;
+}
+/* line 234, index.scss */
+div.board div.list ul.card-list li.card span.hashtag:hover {
+  border-bottom: 2px dotted;
+}
+/* line 238, index.scss */
+div.board div.list ul.card-list li.card .done-button {
   width: 32px;
   height: 32px;
   border-radius: 50px;
   border: 4px solid #8f7d6c;
   background: transparent;
   position: absolute;
-  left: 9px;
-  top: 9px;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
   opacity: 0;
   cursor: pointer;
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   outline: none;
 }
-/* line 175, index.scss */
-div.list ul.card-list li.card:hover .done-button {
+/* line 258, index.scss */
+div.board div.list ul.card-list li.card:hover .done-button {
   opacity: 0.4;
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
-  border-color: #168cff;
+  border-color: #068cff;
 }
-/* line 180, index.scss */
-div.list ul.card-list li.card:hover .done-button:hover {
+/* line 263, index.scss */
+div.board div.list ul.card-list li.card:hover .done-button:hover {
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
-  border-color: #168cff;
+  border-color: #068cff;
   opacity: 1;
 }
-/* line 188, index.scss */
-div.list ul.card-list li.card:hover {
+/* line 270, index.scss */
+div.board div.list ul.card-list li.card div.color-labels {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  width: auto;
+  height: auto;
+  padding: 0px 0px;
+}
+/* line 277, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 40px;
+  height: 7px;
+  position: relative;
+  top: -7px;
+  margin: 0px 4px;
+  background: #068cff;
+  opacity: 0.5;
+  display: inline-block;
+}
+/* line 288, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.blue {
+  background-color: blue;
+}
+/* line 289, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.orange {
+  background-color: orange;
+}
+/* line 290, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.yellow {
+  background-color: #e2c505;
+}
+/* line 291, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.green {
+  background-color: #009844;
+}
+/* line 292, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.red {
+  background-color: red;
+}
+/* line 293, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.purple {
+  background-color: purple;
+}
+/* line 294, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.gray {
+  background-color: gray;
+}
+/* line 295, index.scss */
+div.board div.list ul.card-list li.card div.color-labels span.black {
+  background-color: black;
+}
+/* line 298, index.scss */
+div.board div.list ul.card-list li.card .open-card-on-trello {
+  float: right;
+  color: #068cff;
+  font-size: 15px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 311, index.scss */
+div.board div.list ul.card-list li.card:hover .open-card-on-trello {
+  opacity: 0.4;
+}
+/* line 311, index.scss */
+div.board div.list ul.card-list li.card:hover .open-card-on-trello:hover {
+  opacity: 1;
+}
+/* line 313, index.scss */
+div.board div.list ul.card-list li.card:hover {
   background: #dae0e6;
+}
+
+/* line 321, index.scss */
+.add-item-button-wrapper .add-item-button {
+  position: fixed;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 55px;
+  width: 55px;
+  border-radius: 55px;
+  border: 0px;
+  font-size: 30px;
+  color: #fff;
+  background-color: #3d4767;
+  box-shadow: 0px 2px 10px 2px rgba(47, 54, 75, 0.46);
+  outline: none;
+  padding: 0px;
+}
+/* line 339, index.scss */
+.add-item-button-wrapper .add-item-button > div {
+  position: relative;
+  top: 0px;
+  left: 8px;
+  height: 39px;
+  width: 39px;
+  padding: 0px;
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  margin-right: 0px;
+}
+/* line 350, index.scss */
+.add-item-button-wrapper .add-item-button.close {
+  background-color: #c42c71;
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+}
+/* line 354, index.scss */
+.add-item-button-wrapper .add-item-button.close > div {
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+/* line 362, index.scss */
+.add-item-button-wrapper .add-item-button:hover {
+  cursor: pointer;
+}
+
+/* line 367, index.scss */
+.form-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(61, 71, 103, 0.7);
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+}
+
+@keyframes animation {
+  0% {
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -20%);
+    -moz-transform: translate(-50%, -20%);
+    -o-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+  }
+}
+/* line 394, index.scss */
+.todo-item-input {
+  position: fixed;
+  bottom: 15%;
+  left: 50%;
+  width: 100%;
+  width: 75%;
+  max-width: 750px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 422, index.scss */
+.todo-item-input .wrapper {
+  font-size: 20px;
+  border-radius: 10px;
+  border: 0px;
+  text-align: center;
+  box-shadow: 0px 1px 10px 0px rgba(47, 54, 75, 0.36);
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  animation: animation 150ms ease-out both;
+  overflow: hidden;
+}
+/* line 435, index.scss */
+.todo-item-input .wrapper input {
+  width: 70%;
+  color: #3d4767;
+  padding: 15px 15px;
+  font-weight: 500;
+  font-size: 20px;
+  float: left;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+}
+/* line 446, index.scss */
+.todo-item-input .wrapper select {
+  margin: 0px;
+  outline: none;
+  padding: 15px 0;
+  border: 0px;
+  width: 30%;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  float: right;
+  border-radius: 0px;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: none !important;
+  background-color: #efefef;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 20px;
+  text-align: center;
+}
+/* line 467, index.scss */
+.todo-item-input .wrapper select:after {
+  content: "\25BC";
+  color: #fff;
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+  color: #525674;
+}
+/* line 480, index.scss */
+.todo-item-input .bottom-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 12px 0 12px;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  left: 50%;
+  bottom: -21px;
+  animation: animation 150ms ease-out both;
 }

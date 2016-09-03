@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginFlow from './components/loginflow';
 import Board from './components/board';
+import Logo from './images/logo-test.png';
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +25,8 @@ class App extends Component {
         }
         return (
             <div className="App">
-                <h1>Daily for Trello</h1>
+                <div className="top-border"></div>
+                <img className="logo" alt="logo" src={Logo}/>
                 <LoginFlow
                   authenticated={this.state.authenticated}
                   selectedBoard={this.state.selectedBoard}

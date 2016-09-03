@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import TickIcon from 'react-icons/ti/tick';
+import Linkify from 'react-linkify';
+
 const trelloClient = window.trelloClient;
 
 
@@ -9,6 +10,8 @@ export default class Card extends Component {
 
         this.handleAnimateButton = this.handleAnimateButton.bind(this);
         this.onItemDoneClick = this.onItemDoneClick.bind(this);
+        this.getCardLabelsAsHashtags = this.getCardLabelsAsHashtags.bind(this);
+        this.getCardLabelsAsColorLabels = this.getCardLabelsAsColorLabels.bind(this);
 
         this.state = {
             'animatebutton': false,
@@ -47,7 +50,41 @@ export default class Card extends Component {
             }
         }
     }
+    getCardLabelsAsHashtags() {
+        if(this.props.card.labels.length > 0) {
+            const cardsLabels = this.props.card.labels.map((label) => {
+                if(label.name.length > 0) {
+                    return (
+                        <span
+                            key={Math.random()}
+                            className="hashtag">
+                            #{label.name}
+                        </span>
+                    )
+                }
+            });
+            return cardsLabels;
+        }
+    }
+    getCardLabelsAsColorLabels() {
+        if(this.props.card.labels.length > 0) {
+            const colorLabels = this.props.card.labels.map((label) => {
+                return (
+                    <span key={Math.random()} className={label.color}></span>
+                )
+            })
+            return (
+                <div
+                    key={this.props.card.id}
+                    className="color-labels">
+                    {colorLabels}
+                </div>
+            )
+        }
+    }
     render() {
+        const cardLabelsAsHashtags = this.getCardLabelsAsHashtags();
+        const cardLabelsAsColorLabels = this.getCardLabelsAsColorLabels();
         return (
             <li
                 className={this.getClassName()}
@@ -56,7 +93,15 @@ export default class Card extends Component {
                     className="done-button"
                     onClick={this.onItemDoneClick}>
                 </button>
-                {this.props.card.name}
+                <Linkify properties={{target: '_blank'}}>
+                    {this.props.card.name}
+                </Linkify>
+                {cardLabelsAsHashtags}
+                {cardLabelsAsColorLabels}
+                &nbsp;
+                <a className="open-card-on-trello" target="_blank" href={this.props.card.url}>
+                    <i className="fa fa-pencil"></i>
+                </a>
             </li>
         )
     }

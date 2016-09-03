@@ -17,12 +17,15 @@ export default class List extends Component {
         trelloClient.getListCards({
             success: (data) => {
                 this.setState({
-                    cards: Object.keys(data).map(key => data[key])
+                    cards: Object.keys(data).map(key => data[key]),
                 });
             }
         }, this.props.list.id);
     }
-    componentDidMount() {
+    componentDidMount(){
+        this.loadListCardsFromAPI();
+    }
+    componentWillReceiveProps(){
         this.loadListCardsFromAPI()
     }
     handleClickList() {
@@ -32,7 +35,7 @@ export default class List extends Component {
     }
     render() {
         let cardList;
-        if(this.state.cards.length > 0 && !this.state.closed) {
+        if(!this.state.closed) {
             cardList = this.state.cards.map((card) => {
                 return (
                     <Card
@@ -41,15 +44,15 @@ export default class List extends Component {
                         card={card}
                     />
                 )
-            })
+            });
         } else { cardList = null;}
         return (
             <div className="list">
                 <h4 onClick={this.handleClickList}
                     className={this.state.closed ? 'closed': ''}>
-                    {this.props.list.name}
+                    {this.props.list.name}&nbsp;{this.state.closed ? '('+this.state.cards.length+')' : ''}
                     <span>
-                        {this.state.closed ? this.state.cards.length : ''}
+                        <i className={this.state.closed ? 'i fa fa-chevron-left':'i fa fa-chevron-down'}></i>
                     </span>
                 </h4>
                 <ul className="card-list">

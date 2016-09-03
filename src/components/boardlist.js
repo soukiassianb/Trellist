@@ -11,6 +11,9 @@ export default class BoardList extends Component {
         this.loadBoardsFromAPI = this.loadBoardsFromAPI.bind(this);
         this.onBoardButtonClick = this.onBoardButtonClick.bind(this);
     }
+    componentDidMount() {
+        this.loadBoardsFromAPI();
+    }
     loadBoardsFromAPI() {
         trelloClient.getBoards({
             success: (data) => {
@@ -22,9 +25,6 @@ export default class BoardList extends Component {
     }
     onBoardButtonClick(btn) {
         this.props.handleBoardButtonClick(btn.target.id);
-    }
-    componentDidMount() {
-        this.loadBoardsFromAPI();
     }
     render() {
         let boardlist

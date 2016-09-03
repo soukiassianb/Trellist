@@ -8,7 +8,7 @@ window.trelloClient = (function() {
               write: 'true' },
             expiration: 'never',
             success: opts.authenticationSuccess,
-            error: () => {console.log('Oops.')}
+            error:'',
         });
     }
 
@@ -57,6 +57,44 @@ window.trelloClient = (function() {
             function() {console.log("Failed to load cards");}
         )
     }
+    function getMemberInfo(opts, field) {
+        Trello.get(
+            '/member/me/' + field + '/',
+            opts.success,
+            function() {console.log("Failed to load member field")}
+        )
+    }
+
+    function getAvatar(opts) {
+        getMemberInfo({
+            success:(data) => {
+                let url;
+                if(data._value == "gravatar") {
+                    getMemberInfo({
+                        success:(data) => {
+                            url = buildAvatarUrl(data._value);
+                            opts.success(url);
+                        }
+                    }, "gravatarHash");
+                } else if(data._value == "upload") {
+                    getMemberInfo({
+                        success:(data) => {
+                            url = buildAvatarUrl(data._value);
+                            opts.success(url);
+                        }
+                    }, "uploadedAvatarHash");
+                } else {
+                    url =  null;
+                    opts.success(url);
+                }
+            }
+        }, 'avatarSource');
+
+        function buildAvatarUrl(hash) {
+            return "http://trello-avatars.s3.amazonaws.com/"+ hash +"/170.png";
+        }
+    }
+
 
     //
     // var myList = "578faa068d97a2a50944308b";
@@ -74,6 +112,18 @@ window.trelloClient = (function() {
     // Trello.post('/cards/', newCard, creationSuccess);
     // // Trello.put('/cards/[ID]', {name: 'New Test Card'});
 
+    function addCard(opts, cardName, listId) {
+        Trello.post(
+            '/cards/',
+            {
+                name: cardName,
+                idList: listId
+            },
+            opts.success,
+            function(data) {console.log(data); }
+        )
+    }
+
     function closeCard(opts, cardId, val) {
         Trello.put(
             '/cards/' + cardId + '/closed?value=' + val,
@@ -90,6 +140,9 @@ window.trelloClient = (function() {
       getBoardLists:getBoardLists,
       getListCards:getListCards,
       closeCard:closeCard,
+      getMemberInfo:getMemberInfo,
+      getAvatar:getAvatar,
+      addCard:addCard,
     };
     return trelloClient;
 })();
