@@ -12,12 +12,10 @@ window.trelloClient = (function() {
         });
     }
 
-    var authenticationSuccess = function() {
-        alert('okkkk')
-    }
     var authenticationFailure = function() {
         alert('failure')
     }
+
     function getBoards(opts) {
         Trello.get(
           '/members/me/boards/?filter=open',
@@ -94,23 +92,6 @@ window.trelloClient = (function() {
             return "http://trello-avatars.s3.amazonaws.com/"+ hash +"/170.png";
         }
     }
-
-
-    //
-    // var myList = "578faa068d97a2a50944308b";
-    // var creationSuccess = function(data) {
-    //     console.log('Card created successfully. Data returned:' + JSON.stringify(data));
-    // };
-    //
-    // var newCard = {
-    //     name: 'New Test Card',
-    //     desc: 'This is the description of our new card.',
-    //     // Place this card at the top of our list
-    //     idList: myList,
-    //     pos: 'top'
-    // };
-    // Trello.post('/cards/', newCard, creationSuccess);
-    // // Trello.put('/cards/[ID]', {name: 'New Test Card'});
 
     function addCard(opts, cardName, listId) {
         Trello.post(
