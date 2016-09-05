@@ -85,7 +85,6 @@ export default class Board extends Component {
             })
         } else { lists = null; }
 
-        // {userAvatar}
         return (
             <div className="board">
                 {userAvatar}
