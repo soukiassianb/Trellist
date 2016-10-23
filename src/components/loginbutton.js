@@ -27,8 +27,8 @@ export default class LoginButton extends Component {
                 </button>
                 <p>
                     You'll need a Trello account to log-in.
-                    Get yours at <a target="_blank" href="https://trello.com/">trello.com.</a>
-                A project by Benjamin Soukiassian. Check the source code on Github.
+                    Get yours at <a target="_blank" href="https://trello.com/">trello.com</a>. 
+                A project by <a target="_blank" href="http://soukiassian.me">Benjamin Soukiassian</a>. Check the source code on <a target="_blank" href="https://github.com/soukiassianb/trellist">Github</a>.
                 </p>
             </div>
         )

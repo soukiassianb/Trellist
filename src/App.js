@@ -6,7 +6,7 @@ import Logo from './images/logo-test.png';
 class App extends Component {
     constructor(props) {
         super(props);
-
+        
         this.state = {
             authenticated: false,
             selectedBoard:'',
@@ -18,6 +18,7 @@ class App extends Component {
             board = (
                 <Board
                     boardId={this.state.selectedBoard}
+                    handleSwitchBoard={() => this.setState({ selectedBoard: ''})}
                 />
             )
         } else {
@@ -26,7 +27,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="top-border"></div>
-                <img className="logo" alt="logo" src={Logo}/>
+                <a href="/"><img className="logo" alt="logo" src={Logo}/></a>
                 <LoginFlow
                   authenticated={this.state.authenticated}
                   selectedBoard={this.state.selectedBoard}

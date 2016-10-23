@@ -64,7 +64,6 @@ export default class Board extends Component {
            showAddItemForm: !this.state.showAddItemForm
         })
     }
-
     onItemSubmitted(cardName, listId) {
         this.handleShowAddItemForm();
         this.loadBoardListFromAPI()
@@ -88,7 +87,10 @@ export default class Board extends Component {
         return (
             <div className="board">
                 {userAvatar}
-                <h3>{this.state.board.name}</h3>
+                <h3>
+                    {this.state.board.name}
+                    <i className="fa fa-random switch-board" onClick={this.props.handleSwitchBoard}></i>
+                </h3>
                 {lists}
                 <AddItemForm
                     showAddItemForm={this.state.showAddItemForm}
