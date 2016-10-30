@@ -2,6 +2,7 @@
   "name": "TrelloClient",
   "version": "0.0.1",
   "private": true,
+  "homepage": "http://soukiassianb.github.io/Trellist",
   "devDependencies": {
     "react-scripts": "0.2.3"
   },
