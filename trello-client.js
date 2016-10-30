@@ -2,7 +2,7 @@ window.trelloClient = (function() {
     function Login(opts) {
         Trello.authorize({
             type: 'popup',
-            name: 'Trello Client',
+            name: 'Trellist - Trello Client',
             scope: {
               read: 'true',
               write: 'true' },

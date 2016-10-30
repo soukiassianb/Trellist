@@ -32,6 +32,7 @@ export default class Board extends Component {
     loadBoardFromAPI() {
         trelloClient.getBoard({
             success: (data) => {
+                debugger;
                 this.setState({ board: data});
             }
         }, this.props.boardId);
